@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Izmjena prizvoda</title>
+</head>
+<body>
+<div align="center">
+    <h1>Izmjena proizvoda</h1>
+    </br>
+    <div>
+        <form align="center" action="#" th:action="@{/update/{ID}(ID=${informacije.ID})}" th:object="${informacije}" method="post" enctype="multipart/form-data">
+            <div align="left">
+                <label align="center">Naziv proizvoda</label>
+                <td>
+                    <input type="hidden" th:field="*{ID}">
+                    <input align="center" type="text" th:field="*{naziv}" placeholder="Naziv prozvoda">
+                </td>
+            </div>
+            </br>
+            <div align="left">
+                <label align="center">Kratak opis</label>
+                <td>
+
+                    <input align="center" type="text" th:field="*{kratakopis}" placeholder="Kratak opis proizvoda">
+                </td>
+            </div>
+            </br>
+            <div align="left">
+                <label align="center">Slika</label>
+                <td>
+
+                    <input align="center" name="file" type="file"  placeholder="Slika">
+                </td>
+            </div>
+            </br>
+            <div align="left">
+                <label align="center">Kolicina</label>
+                <td>
+
+                    <input align="center" type="text" th:field="*{kolicina}" placeholder="Kolicina">
+                </td>
+            </div>
+            </br>
+            <div align="left">
+                <label align="center">Cijena</label>
+                <td>
+
+                    <input align="center" type="text" th:field="*{cijena}" placeholder="Cijena">
+                </td>
+            </div>
+            </br>
+            <tr>
+                <td>
+                    <button align="center" type="submit">SNIMI</button>
+                </td>
+            </tr>
+        </form>
+    </div>
+</div>
+<style>
+
+    :root
+{
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 4px 5px rgba(43, 25, 146, 0.8);
+}
+html
+{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--shadow);
+}
+body
+{
+    background: linear-gradient(60deg,rgb(213, 212, 230), rgba(218, 214, 235, 0.945));
+    background: url("http://www.hdwallpaperspulse.com/wp-content/uploads/2012/10/abstract-blue-backgrounds-16_1920x1200_71449.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+form{
+display:flex;
+justify-content: center;
+}
+
+input {
+  width: 50%;
+}
+
+</style>
+</body>
+</html>

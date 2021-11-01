@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB-SHOP</title>
+
+</head>
+<body>
+
+<table>
+    <tbody>
+    <tr>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th>Proizvod ID</th>
+                    <th>Naziv proizvoda</th>
+                    <th>Kratak opis</th>
+                    <th>Fotografija proizvoda</th>
+                    <th>Kolicina</th>
+                    <th>Cijena</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="informacije : ${listinformacije}">
+                    <td th:text="${informacije.ID}">Proizvod ID</td>
+                    <td th:text="${informacije.naziv}">Naziv</td>
+                    <td th:text="${informacije.kratakopis}">Opis proizvoda</td>
+                    <td ><img th:src="*{'data:image/png;base64,'+{informacije.slika}}"></td>
+                    <td th:text="${informacije.kolicina}">Kolicina</td>
+                    <td th:text="${informacije.cijena}">Cijena</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </tr>
+    </tbody>
+</table>
+<style>
+
+    :root
+{
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 4px 5px rgba(43, 25, 146, 0.8);
+}
+html
+{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--shadow);
+}
+body
+{
+    background: linear-gradient(60deg,rgb(213, 212, 230), rgba(218, 214, 235, 0.945));
+    background: url("http://www.hdwallpaperspulse.com/wp-content/uploads/2012/10/abstract-blue-backgrounds-16_1920x1200_71449.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+table{
+width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+td{
+max-height:200px;
+}
+
+</style>
+</body>
+</html>
